@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- ========================================== -->
+    <!-- FAVICON E ÍCONES DE DISPOSITIVOS -->
+    <!-- ========================================== -->
+    <link rel="icon" type="image/png" href="./favicon.png?v=2">
+    <link rel="apple-touch-icon" href="./favicon.png?v=2">
+    <link rel="shortcut icon" href="./favicon.png?v=2">
+
+    <!-- ========================================== -->
     <!-- SEO TÉCNICO E META TAGS PRIMÁRIAS -->
     <!-- ========================================== -->
     <title>Deskchain - Encurtador de Links e QR Code | São Francisco, MG</title>
@@ -24,7 +31,7 @@
     <meta property="og:url" content="https://deskchaingeradordelink.netlify.app/">
     <meta property="og:title" content="Deskchain - Encurtador de Links e QR Code Profissional">
     <meta property="og:description" content="Encurte links e gere QR Codes dinâmicos para a sua empresa em São Francisco, MG. Ferramenta gratuita da Deskchain.">
-    <meta property="og:image" content="https://deskchaingeradordelink.netlify.app/og-image.jpg">
+    <meta property="og:image" content="https://deskchaingeradordelink.netlify.app/./favicon.png?v=2">
     <meta property="og:image:alt" content="Interface do Encurtador de Links Deskchain">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="Deskchain">
@@ -34,7 +41,7 @@
     <meta name="twitter:url" content="https://deskchaingeradordelink.netlify.app/">
     <meta name="twitter:title" content="Deskchain - Encurtador Profissional | São Francisco, MG">
     <meta name="twitter:description" content="Crie links curtos e QR Codes rápidos para o mercado de São Francisco, MG.">
-    <meta name="twitter:image" content="https://deskchaingeradordelink.netlify.app/og-image.jpg">
+    <meta name="twitter:image" content="https://deskchaingeradordelink.netlify.app/./favicon.png?v=2">
 
     <!-- ========================================== -->
     <!-- DADOS ESTRUTURADOS (JSON-LD) PARA O GOOGLE -->
@@ -259,7 +266,6 @@
             lucide.createIcons();
 
             try {
-                // API is.gd
                 const res = await fetch(`https://is.gd/create.php?format=json&url=${encodeURIComponent(urlValue)}&log=1`);
                 const data = await res.json();
 
