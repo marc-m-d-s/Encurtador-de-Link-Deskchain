@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Deskchain - Encurtador de Links e QR Code | São Francisco, MG</title>
+    
+    <!-- ========================================== -->
+    <!-- SEO AVANÇADO -->
+    <!-- ========================================== -->
+    <meta name="description" content="Encurte seus links e crie códigos QR personalizados gratuitamente em São Francisco, MG. A ferramenta definitiva da Deskchain para o seu negócio local.">
+    <meta name="keywords" content="encurtador de link, qr code grátis, deskchain, são francisco mg, gerador de link whatsapp, marketing digital minas gerais">
+    <meta name="author" content="Deskchain">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://seu-dominio.com.br/">
+    
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seu-dominio.com.br/">
+    <meta property="og:title" content="Deskchain - Encurtador de Links Profissional | São Francisco, MG">
+    <meta property="og:description" content="Transforme links longos em URLs curtas e amigáveis. Gere QR Codes dinâmicos para sua empresa em São Francisco, MG.">
+    <meta property="og:image" content="https://seu-dominio.com.br/og-image.jpg">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Deskchain - Encurtador de Links Profissional">
+    <meta name="twitter:description" content="URLs curtas e QR Codes rápidos para o mercado de São Francisco, MG.">
+
+    <!-- JSON-LD - Dados Estruturados (Google Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Deskchain Encurtador",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "description": "Encurtador de links e gerador de QR Codes focado em negócios de São Francisco, MG.",
+      "author": {
+        "@type": "Organization",
+        "name": "Deskchain"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Personalização da Scrollbar para manter o design limpo */
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        
+        /* Suavização de interações mobile */
+        input, button { touch-action: manipulation; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 min-h-screen py-4 sm:py-12 px-4 sm:px-6">
+
+    <main class="max-w-4xl mx-auto w-full space-y-6 sm:space-y-10">
+        
+        <!-- CABEÇALHO RESPONSIVO -->
+        <header class="text-center relative py-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-4 animate-fade-in">
+                Deskchain
+            </h1>
+            <p class="mt-3 text-base sm:text-lg lg:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed px-2">
+                O Encurtador de Links definitivo de <strong>São Francisco, MG</strong>. 
+                Crie URLs curtas com estatísticas de cliques reais de forma profissional e gratuita.
+            </p>
+        </header>
+
+        <!-- CARD PRINCIPAL (GRID RESPONSIVO) -->
+        <section class="bg-white rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-all hover:shadow-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                
+                <!-- COLUNA ESQUERDA: Configuração -->
+                <div class="p-6 sm:p-10 border-b md:border-b-0 md:border-r border-gray-100">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                        <span class="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center mr-3 text-sm font-black shadow-lg shadow-orange-500/30">1</span>
+                        Novo Link
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label for="input-title" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                <i data-lucide="tag" class="w-4 h-4"></i>
+                                Nome do Link (Interno)
+                            </label>
+                            <input type="text" id="input-title" placeholder="Ex: Bio do Instagram..." 
+                                class="block w-full border border-gray-200 bg-gray-50 rounded-xl p-4 outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all">
+                        </div>
+
+                        <div>
+                            <label for="input-url" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                <i data-lucide="link" class="w-4 h-4"></i>
+                                URL de Destino *
+                            </label>
+                            <input type="url" id="input-url" placeholder="https://venda.com/produto-especifico" 
+                                class="block w-full border border-gray-200 bg-gray-50 rounded-xl p-4 outline-none focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all">
+                        </div>
+
+                        <button id="btn-shorten" class="w-full py-4 px-6 bg-orange-500 hover:bg-orange-600 active:scale-[0.98] text-white font-black rounded-xl transition-all flex items-center justify-center gap-2 shadow-xl shadow-orange-500/20 text-sm uppercase tracking-widest">
+                            <i data-lucide="scissors" class="w-5 h-5"></i>
+                            Gerar Agora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA: Resultado (Totalmente adaptável) -->
+                <div id="result-container" class="p-6 sm:p-10 bg-gray-50 flex flex-col min-h-[350px] sm:min-h-[450px]">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                        <span class="bg-gray-200 text-gray-600 w-8 h-8 rounded-lg flex items-center justify-center mr-3 text-sm font-black">2</span>
+                        Resultado
+                    </h2>
+                    
+                    <!-- ESTADO VAZIO -->
+                    <div id="empty-state" class="flex-1 flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-gray-300 rounded-3xl opacity-60">
+                        <i data-lucide="sparkles" class="w-10 h-10 text-gray-300 mb-4"></i>
+                        <p class="text-gray-500 text-sm leading-relaxed">Insira sua URL longa à esquerda para obter o link encurtado e o QR Code.</p>
+                    </div>
+
+                    <!-- ESTADO COM RESULTADO -->
+                    <div id="result-state" class="hidden flex-1 flex flex-col justify-between animate-fade-in">
+                        <div class="space-y-8">
+                            <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm text-center">
+                                <p id="output-short-url" class="text-lg sm:text-xl font-black text-orange-600 mb-2 truncate"></p>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-green-50 text-green-600 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                                    <i data-lucide="check-circle" class="w-3 h-3"></i> Pronto para uso
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <button id="btn-copy-main" class="flex justify-center items-center py-4 px-4 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl transition-all shadow-lg shadow-orange-500/20 text-xs uppercase tracking-widest">
+                                    <i data-lucide="copy" class="w-4 h-4 mr-2"></i> Copiar
+                                </button>
+                                <a id="global-stats-link-main" href="#" target="_blank" class="flex justify-center items-center py-4 px-4 bg-gray-900 hover:bg-black text-white font-black rounded-xl transition-all shadow-lg text-xs uppercase tracking-widest">
+                                    <i data-lucide="bar-chart-3" class="w-4 h-4 mr-2"></i> Ver Cliques
+                                </a>
+                            </div>
+
+                            <div class="pt-8 border-t border-gray-200 flex flex-col items-center">
+                                <div class="bg-white p-4 rounded-3xl border border-gray-100 shadow-xl transition-transform hover:scale-105">
+                                    <img id="qr-code-img" src="" alt="QR Code Deskchain" class="w-32 h-32 sm:w-40 sm:h-40">
+                                </div>
+                                <p class="mt-6 text-[10px] text-gray-400 text-center uppercase font-bold tracking-[0.2em]">
+                                    QR Code Gerado por Deskchain
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTÓRICO COM SCROLL PERSONALIZADO -->
+        <section id="history-section" class="bg-white rounded-3xl shadow-lg border border-gray-100 p-6 sm:p-10 hidden transition-all">
+            <div class="flex flex-col sm:flex-row items-center justify-between mb-8 border-b border-gray-100 pb-6 gap-4">
+                <h2 class="text-2xl font-black text-gray-900 flex items-center gap-3">
+                    <i data-lucide="history" class="text-orange-500"></i>
+                    Seus Links
+                </h2>
+                <button id="btn-clear-history" class="text-[10px] font-black uppercase text-gray-400 hover:text-red-500 transition-colors tracking-widest flex items-center gap-2">
+                    <i data-lucide="trash-2" class="w-3 h-3"></i> Limpar Histórico
+                </button>
+            </div>
+            <div id="history-list" class="space-y-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+                <!-- Itens injetados via JS -->
+            </div>
+        </section>
+
+        <!-- RODAPÉ SEO -->
+        <footer class="mt-16 sm:mt-24 pt-12 border-t border-gray-200 text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12 text-left sm:text-center px-4">
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">Localização</h4>
+                    <p class="text-sm font-bold text-gray-600">São Francisco, Minas Gerais<br>Brasil</p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">Tecnologia</h4>
+                    <p class="text-sm font-bold text-gray-600">is.gd API Integration<br>QR Dinâmico 2024</p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">Suporte</h4>
+                    <a href="https://deskchain.com.br/" target="_blank" class="text-sm font-bold text-orange-500 hover:underline">deskchain.com.br</a>
+                </div>
+            </div>
+            <p class="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em] mt-8">
+                &copy; 2024 Deskchain Platform &bull; Made in São Francisco, MG
+            </p>
+        </footer>
+    </main>
+
+    <!-- SCRIPTS DE FUNCIONALIDADE -->
+    <script>
+        // Carregamento de dados locais
+        let linksHistory = JSON.parse(localStorage.getItem('deskchain_local_history') || '[]');
+
+        const inputUrl = document.getElementById('input-url');
+        const inputTitle = document.getElementById('input-title');
+        const btnShorten = document.getElementById('btn-shorten');
+        const historyList = document.getElementById('history-list');
+        const historySection = document.getElementById('history-section');
+
+        function saveToStorage() {
+            localStorage.setItem('deskchain_local_history', JSON.stringify(linksHistory));
+            renderHistory();
+            renderMainResult();
+        }
+
+        function getLinkId(shortUrl) {
+            try { return shortUrl.split('/').pop(); } catch (e) { return shortUrl; }
+        }
+
+        // Criar link encurtado
+        btnShorten.onclick = async () => {
+            const urlValue = inputUrl.value.trim();
+            const titleValue = inputTitle.value.trim() || "Link sem título";
+
+            if (!urlValue.startsWith('http')) {
+                alert('Por favor, insira uma URL válida começando com http:// ou https://');
+                return;
+            }
+
+            btnShorten.disabled = true;
+            const originalContent = btnShorten.innerHTML;
+            btnShorten.innerHTML = '<i data-lucide="refresh-cw" class="w-5 h-5 animate-spin"></i> Gerando...';
+            lucide.createIcons();
+
+            try {
+                // log=1 permite estatísticas
+                const res = await fetch(`https://is.gd/create.php?format=json&url=${encodeURIComponent(urlValue)}&log=1`);
+                const data = await res.json();
+
+                if (data.shorturl) {
+                    const newItem = {
+                        id: Date.now().toString(),
+                        title: titleValue,
+                        original: urlValue,
+                        short: data.shorturl,
+                        createdAt: Date.now(),
+                        hasStats: true
+                    };
+                    
+                    linksHistory.unshift(newItem);
+                    saveToStorage();
+                    
+                    inputUrl.value = '';
+                    inputTitle.value = '';
+                } else {
+                    alert('Erro da API: ' + data.errormessage);
+                }
+            } catch (err) {
+                alert('Erro de conexão. Tente novamente.');
+            } finally {
+                btnShorten.disabled = false;
+                btnShorten.innerHTML = originalContent;
+                lucide.createIcons();
+            }
+        };
+
+        function renderMainResult() {
+            const empty = document.getElementById('empty-state');
+            const result = document.getElementById('result-state');
+            
+            if (linksHistory.length === 0) {
+                empty.classList.remove('hidden');
+                result.classList.add('hidden');
+                return;
+            }
+
+            empty.classList.add('hidden');
+            result.classList.remove('hidden');
+
+            const latest = linksHistory[0];
+            document.getElementById('output-short-url').textContent = latest.short.replace('https://', '');
+            document.getElementById('qr-code-img').src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(latest.short)}&color=111827`;
+            
+            const linkId = getLinkId(latest.short);
+            document.getElementById('global-stats-link-main').href = `https://is.gd/stats.php?url=${linkId}`;
+
+            document.getElementById('btn-copy-main').onclick = () => copyLink(latest.short, document.getElementById('btn-copy-main'));
+        }
+
+        function renderHistory() {
+            if (linksHistory.length === 0) {
+                historySection.classList.add('hidden');
+                return;
+            }
+
+            historySection.classList.remove('hidden');
+            historyList.innerHTML = linksHistory.map(item => {
+                const linkId = getLinkId(item.short);
+                return `
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-5 border border-gray-100 bg-gray-50 rounded-2xl gap-4 hover:bg-white hover:border-orange-200 transition-all shadow-sm">
+                    <div class="min-w-0 flex-grow">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="font-black text-gray-900 truncate text-sm uppercase tracking-tight">${item.title}</span>
+                            ${!item.hasStats ? '<span class="text-[8px] bg-gray-200 text-gray-500 px-1.5 py-0.5 rounded-full font-bold">Sem Stats</span>' : ''}
+                        </div>
+                        <p class="text-[10px] text-gray-400 truncate max-w-[250px] sm:max-w-md">${item.original}</p>
+                        <div class="flex items-center gap-4 mt-2">
+                            <p class="text-sm font-black text-orange-600">${item.short.replace('https://', '')}</p>
+                            ${item.hasStats ? `
+                                <a href="https://is.gd/stats.php?url=${linkId}" target="_blank" class="flex items-center gap-1 text-[10px] font-black text-gray-400 hover:text-orange-500 uppercase tracking-tighter transition-colors">
+                                    <i data-lucide="bar-chart-3" class="w-3 h-3"></i> Cliques
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                    <div class="flex gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                        <button onclick="window.copyFromHistory('${item.short}', this)" class="flex-1 sm:flex-none px-5 py-3 bg-white border border-gray-200 rounded-xl text-[10px] font-black uppercase tracking-widest hover:border-orange-500 hover:text-orange-500 transition-all shadow-sm">
+                            Copiar
+                        </button>
+                        <button onclick="window.deleteItem('${item.id}')" class="p-3 text-gray-300 hover:text-red-500 transition-colors">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            `}).join('');
+            lucide.createIcons();
+        }
+
+        async function copyLink(text, btn) {
+            const original = btn.innerHTML;
+            try {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+
+                btn.innerHTML = '<i data-lucide="check" class="w-4 h-4 mr-2"></i> Copiado!';
+                btn.classList.add('bg-green-600', 'text-white');
+                lucide.createIcons();
+
+                setTimeout(() => {
+                    btn.innerHTML = original;
+                    btn.classList.remove('bg-green-600', 'text-white');
+                    lucide.createIcons();
+                }, 2000);
+            } catch (err) {
+                console.error('Falha ao copiar.');
+            }
+        }
+
+        window.copyFromHistory = (text, btn) => copyLink(text, btn);
+        
+        window.deleteItem = (id) => {
+            if (!confirm('Deseja eliminar este link?')) return;
+            linksHistory = linksHistory.filter(item => item.id !== id);
+            saveToStorage();
+        };
+
+        document.getElementById('btn-clear-history').onclick = () => {
+            if (!confirm('Deseja limpar todo o seu histórico local?')) return;
+            linksHistory = [];
+            saveToStorage();
+        };
+
+        // Iniciar
+        renderHistory();
+        renderMainResult();
+        lucide.createIcons();
+    </script>
+</body>
+</html>
