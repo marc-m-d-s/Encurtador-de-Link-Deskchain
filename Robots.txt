@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deskchainencurtadordelink.netlify.app/sitemap.xml
